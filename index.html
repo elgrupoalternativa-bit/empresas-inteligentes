@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Empresas Inteligentes — Automatiza tu empresa para vender más</title>
+<meta name="description" content="Conferencia presencial gratuita en Fenalco. Aprende a automatizar tu empresa para vender más, más rápido y con menos gastos operativos. Miércoles 16 de septiembre, 8:00 a 10:00 AM. Cupos limitados." />
+<meta name="theme-color" content="#0b1220" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231746d6'/%3E%3Cpath d='M16 6a3 3 0 0 0-3 3 3 3 0 0 0 0 14 3 3 0 0 0 6 0 3 3 0 0 0 0-14 3 3 0 0 0-3-3Z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M12 16h8M16 12v8' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+<script>document.documentElement.className+=' js';</script>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Empresas Inteligentes — Conferencia presencial gratuita" />
+<meta property="og:description" content="Automatiza tu empresa para vender más, más rápido y con menos gastos. Fenalco · 16 de septiembre · 8–10 AM · Cupos limitados." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ===================== RESET / BASE (mobile-first) ===================== */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f3f6fc;
+    --bg-ink:#0b1220;
+    --ink:#0b1220;
+    --ink-2:#39415a;
+    --muted:#6b7488;
+    --line:#e6eaf3;
+    --accent:#1f5bff;      /* azul eléctrico */
+    --accent-2:#0a3ad1;
+    --accent-soft:#eaf0ff;
+    --emerald:#0ea472;
+    --emerald-soft:#e6f7f0;
+    --radius:18px;
+    --shadow-sm:0 2px 10px rgba(16,24,52,.06);
+    --shadow-md:0 14px 40px rgba(16,24,52,.10);
+    --shadow-cta:0 12px 26px rgba(31,91,255,.34);
+    --maxw:1140px;
+  }
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+    padding-bottom:76px; /* espacio para CTA fija en móvil */
+  }
+  h1,h2,h3{font-family:"Sora",sans-serif;line-height:1.12;letter-spacing:-.02em;color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .accent{color:var(--accent)}
+  .grad{background:linear-gradient(120deg,var(--accent),#5b86ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ===================== BOTONES ===================== */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:"Sora",sans-serif;font-weight:700;font-size:16px;line-height:1;
+    padding:17px 26px;border-radius:14px;border:0;cursor:pointer;
+    text-align:center;width:100%;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, filter .18s ease;
+    will-change:transform;
+  }
+  .btn svg{width:19px;height:19px;transition:transform .18s ease}
+  .btn-primary{
+    color:#fff;
+    background:linear-gradient(135deg,#2a67ff,#1746d6);
+    box-shadow:var(--shadow-cta);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(31,91,255,.44);filter:saturate(1.08)}
+  .btn-primary:hover svg{transform:translateX(4px)}
+  .btn-primary:active{transform:translateY(0)}
+  .btn-ghost{
+    color:var(--accent);background:#fff;border:1.5px solid var(--accent);
+    box-shadow:var(--shadow-sm);
+  }
+  .btn-ghost:hover{transform:translateY(-2px);background:var(--accent-soft);box-shadow:0 12px 26px rgba(31,91,255,.18)}
+  .btn:focus-visible{outline:3px solid rgba(31,91,255,.45);outline-offset:3px}
+  @media(min-width:560px){ .btn{width:auto} }
+
+  /* ===================== HEADER / NAV ===================== */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Sora",sans-serif;font-weight:700;font-size:16px}
+  .brand .mark{
+    width:34px;height:34px;border-radius:10px;flex:0 0 auto;
+    background:linear-gradient(135deg,#2a67ff,#1746d6);
+    display:grid;place-items:center;box-shadow:var(--shadow-cta);
+  }
+  .brand .mark svg{width:19px;height:19px;color:#fff}
+  .brand small{display:block;font-family:"Inter";font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.02em}
+  .nav .btn{display:none;padding:11px 18px;font-size:14px;border-radius:11px}
+  @media(min-width:820px){ .nav .btn{display:inline-flex} }
+
+  /* ===================== HERO ===================== */
+  .hero{position:relative;overflow:hidden;background:var(--bg);padding:52px 0 58px}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 82% 8%, rgba(31,91,255,.14), transparent 60%),
+      radial-gradient(48% 40% at 0% 4%, rgba(14,164,114,.10), transparent 60%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(70% 60% at 60% 0%, #000 40%, transparent 80%);
+            mask-image:radial-gradient(70% 60% at 60% 0%, #000 40%, transparent 80%);
+  }
+  .hero .wrap{position:relative;z-index:1;display:grid;gap:34px;align-items:center}
+  .hero-copy{text-align:center}
+  .pill{
+    display:inline-flex;align-items:center;gap:9px;
+    background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);
+    padding:8px 15px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink-2);
+  }
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 4px var(--emerald-soft)}
+  h1{font-size:clamp(31px,7.4vw,54px);font-weight:800;margin:20px auto 0;max-width:16ch}
+  .lead{font-size:clamp(16px,4.4vw,20px);color:var(--ink-2);margin:18px auto 0;max-width:52ch}
+  .lead b{color:var(--ink);font-weight:700}
+  .hero-cta{margin:30px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .cta-note{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
+  .cta-note svg{width:15px;height:15px;color:var(--emerald)}
+  .facts{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px auto 0;
+  }
+  .fact{
+    display:inline-flex;align-items:center;gap:9px;background:var(--bg-soft);
+    border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:13.5px;font-weight:600;color:var(--ink-2)
+  }
+  .fact svg{width:17px;height:17px;color:var(--accent);flex:0 0 auto}
+
+  .hero-art{position:relative;justify-self:center;width:100%;max-width:440px}
+  .hero-art .card-float{
+    position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow-md);padding:11px 14px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px;
+    font-family:"Sora",sans-serif;
+  }
+  .hero-art .card-float .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+  .hero-art .card-float .ico svg{width:17px;height:17px;color:#fff}
+  .hero-art .cf1{top:6%;left:-2%;animation:floaty 5.5s ease-in-out infinite}
+  .hero-art .cf2{bottom:10%;right:-3%;animation:floaty 6.5s ease-in-out infinite .6s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+  @media(min-width:900px){
+    .hero{padding:64px 0 76px}
+    .hero .wrap{grid-template-columns:1.08fr .92fr;gap:44px}
+    .hero-copy{text-align:left}
+    h1{margin-left:0;margin-right:0}
+    .lead{margin-left:0;margin-right:0}
+    .hero-cta{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-items:center}
+    .facts{justify-content:flex-start}
+  }
+
+  /* ===================== SECCIONES ===================== */
+  section{position:relative}
+  .s{padding:60px 0}
+  .s-soft{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .s-head{text-align:center;max-width:640px;margin:0 auto 40px}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;font-family:"Sora";font-weight:700;
+    font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    background:var(--accent-soft);padding:7px 13px;border-radius:999px;
+  }
+  .s-head h2{font-size:clamp(26px,6vw,40px);font-weight:800;margin-top:16px}
+  .s-head p{color:var(--ink-2);font-size:clamp(15px,4vw,18px);margin-top:14px}
+
+  /* ===== Beneficios ===== */
+  .grid3{display:grid;gap:18px}
+  @media(min-width:720px){ .grid3{grid-template-columns:repeat(3,1fr)} }
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#d3ddf6}
+  .card .ic{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;
+    background:linear-gradient(135deg,#2a67ff,#1746d6);box-shadow:var(--shadow-cta);
+  }
+  .card.em .ic{background:linear-gradient(135deg,#12b981,#0a8f5f);box-shadow:0 12px 26px rgba(14,164,114,.3)}
+  .card .ic svg{width:26px;height:26px;color:#fff}
+  .card h3{font-size:20px;font-weight:700;margin-bottom:9px}
+  .card p{color:var(--ink-2);font-size:15.5px}
+
+  /* ===== Lo que aprenderás ===== */
+  .learn{display:grid;gap:14px;max-width:760px;margin:0 auto}
+  @media(min-width:680px){ .learn{grid-template-columns:1fr 1fr} }
+  .learn .row{
+    display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm)
+  }
+  .learn .chk{
+    flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--emerald-soft);
+    display:grid;place-items:center;margin-top:2px
+  }
+  .learn .chk svg{width:15px;height:15px;color:var(--emerald)}
+  .learn .row p{font-size:15px;color:var(--ink-2)}
+  .learn .row b{color:var(--ink);font-weight:700}
+
+  /* ===== Detalles del evento ===== */
+  .event{
+    max-width:920px;margin:0 auto;border-radius:24px;overflow:hidden;
+    background:linear-gradient(160deg,#0d1830,#0b1220);color:#fff;box-shadow:var(--shadow-md);
+    position:relative;
+  }
+  .event::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(50% 60% at 88% 0%, rgba(31,91,255,.4), transparent 60%),
+              radial-gradient(40% 50% at 0% 100%, rgba(14,164,114,.28), transparent 60%);
+  }
+  .event-in{position:relative;z-index:1;padding:34px 26px}
+  .event .tag{
+    display:inline-flex;align-items:center;gap:8px;font-family:"Sora";font-weight:700;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;color:#bcd0ff;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 13px;border-radius:999px;
+  }
+  .event h2{color:#fff;font-size:clamp(24px,5.5vw,34px);font-weight:800;margin:16px 0 4px}
+  .event .sub{color:#aeb8d0;font-size:15px}
+  .event-rows{display:grid;gap:12px;margin:26px 0 28px}
+  @media(min-width:640px){ .event-rows{grid-template-columns:1fr 1fr} }
+  .erow{
+    display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:15px 16px
+  }
+  .erow .ico{
+    width:44px;height:44px;border-radius:12px;flex:0 0 auto;display:grid;place-items:center;
+    background:rgba(31,91,255,.22);border:1px solid rgba(120,160,255,.35)
+  }
+  .erow .ico svg{width:22px;height:22px;color:#9fc0ff}
+  .erow .k{display:block;font-size:11.5px;color:#8f9abb;letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:2px}
+  .erow .v{font-family:"Sora";font-weight:700;font-size:16px;color:#fff;line-height:1.25}
+  .erow.free .ico{background:rgba(14,164,114,.22);border-color:rgba(46,200,150,.4)}
+  .erow.free .ico svg{color:#59e0ac}
+  .event .btn{background:#fff;color:var(--accent)}
+  .event .btn:hover{background:#eef3ff}
+  .event .fineprint{margin-top:15px;font-size:13px;color:#94a0bd;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
+  .event .fineprint svg{width:15px;height:15px;color:#59e0ac;flex:0 0 auto}
+
+  /* ===== CTA final ===== */
+  .final{background:var(--bg);text-align:center}
+  .final .box{max-width:720px;margin:0 auto}
+  .final h2{font-size:clamp(26px,6.4vw,42px);font-weight:800}
+  .final p{color:var(--ink-2);font-size:clamp(15px,4vw,18px);margin:16px auto 0;max-width:56ch}
+  .final .cta-wrap{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .urgency{
+    display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-weight:700;font-size:14px;
+    background:var(--accent-soft);padding:9px 15px;border-radius:999px;margin-bottom:6px
+  }
+  .urgency .pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,91,255,.5)}50%{box-shadow:0 0 0 7px rgba(31,91,255,0)}}
+
+  /* ===== Footer ===== */
+  footer{background:var(--bg-ink);color:#aeb8d0;padding:38px 0 30px;text-align:center}
+  footer .brand{justify-content:center;color:#fff;font-size:17px}
+  footer .brand small{color:#8f9abb}
+  footer .fline{margin-top:14px;font-size:14px;color:#c4ccdf}
+  footer .legal{margin-top:16px;font-size:12.5px;color:#7c86a2;line-height:1.7}
+
+  /* ===== CTA fija móvil ===== */
+  .stickybar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px));
+    box-shadow:0 -8px 24px rgba(16,24,52,.08);
+  }
+  .stickybar .btn{padding:14px 20px;font-size:15px}
+  @media(min-width:820px){ .stickybar{display:none} body{padding-bottom:0} }
+
+  /* ===== Reveal ===== */
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1;transform:none;transition:none}
+    .cf1,.cf2,.pulse{animation:none !important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Empresas Inteligentes">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3V5a3 3 0 0 0-3-3Z"/><path d="M9 12h6M12 9v6"/></svg>
+      </span>
+      <span>Empresas Inteligentes<small>Conferencia presencial · Fenalco</small></span>
+    </a>
+    <a class="btn btn-primary" href="https://forms.gle/PE7QfxN2FqSzSSTJ6" target="_blank" rel="noopener noreferrer">Reservar cupo gratis</a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill reveal"><span class="dot"></span>Evento presencial · Entrada 100% gratuita</span>
+      <h1 class="reveal">Automatiza tu empresa para <span class="grad">vender más</span>, más rápido y con menos gastos</h1>
+      <p class="lead reveal">Una conferencia práctica donde aprenderás a usar la automatización y la IA para <b>aumentar tus ventas</b>, <b>acelerar tus procesos</b> y <b>reducir tus costos operativos</b>. Cupos limitados.</p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="https://forms.gle/PE7QfxN2FqSzSSTJ6" target="_blank" rel="noopener noreferrer">
+          Reservar Mi Cupo Gratis Ahora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="cta-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Sin costo · Cupo sujeto a disponibilidad
+        </span>
+      </div>
+
+      <div class="facts reveal">
+        <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Miércoles 16 de septiembre</span>
+        <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>8:00 – 10:00 AM</span>
+        <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Instalaciones de Fenalco</span>
+      </div>
+    </div>
+
+    <!-- Ilustración decorativa (SVG en línea, sin imágenes externas) -->
+    <div class="hero-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2a67ff"/><stop offset="1" stop-color="#1746d6"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#12b981"/><stop offset="1" stop-color="#0a8f5f"/>
+          </linearGradient>
+        </defs>
+        <rect x="70" y="60" width="320" height="230" rx="20" fill="#ffffff" stroke="#e6eaf3"/>
+        <rect x="70" y="60" width="320" height="52" rx="20" fill="#f3f6fc"/>
+        <circle cx="96" cy="86" r="6" fill="#cfd9ee"/><circle cx="116" cy="86" r="6" fill="#cfd9ee"/><circle cx="136" cy="86" r="6" fill="#cfd9ee"/>
+        <!-- nodos de automatización -->
+        <line x1="150" y1="165" x2="230" y2="140" stroke="#c7d3ee" stroke-width="2"/>
+        <line x1="150" y1="165" x2="230" y2="205" stroke="#c7d3ee" stroke-width="2"/>
+        <line x1="230" y1="140" x2="315" y2="175" stroke="#c7d3ee" stroke-width="2"/>
+        <line x1="230" y1="205" x2="315" y2="175" stroke="#c7d3ee" stroke-width="2"/>
+        <circle cx="150" cy="165" r="20" fill="url(#g1)"/>
+        <circle cx="230" cy="140" r="16" fill="#eaf0ff" stroke="#bcd0ff" stroke-width="2"/>
+        <circle cx="230" cy="205" r="16" fill="#eaf0ff" stroke="#bcd0ff" stroke-width="2"/>
+        <circle cx="315" cy="175" r="22" fill="url(#g2)"/>
+        <path d="M143 165l5 5 9-10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M307 175h16M315 167v16" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+        <rect x="96" y="235" width="130" height="9" rx="4.5" fill="#e6eaf3"/>
+        <rect x="96" y="252" width="86" height="9" rx="4.5" fill="#eef1f8"/>
+      </svg>
+      <div class="card-float cf1">
+        <span class="ico" style="background:linear-gradient(135deg,#2a67ff,#1746d6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span>
+        +38% ventas
+      </div>
+      <div class="card-float cf2">
+        <span class="ico" style="background:linear-gradient(135deg,#12b981,#0a8f5f)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
+        Procesos en minutos
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BENEFICIOS ===================== -->
+<section class="s s-soft" id="beneficios">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="kicker">Lo que vas a lograr</span>
+      <h2>Tres resultados concretos para tu empresa</h2>
+      <p>No es teoría. Sales de la conferencia sabiendo exactamente por dónde empezar a automatizar.</p>
+    </div>
+
+    <div class="grid3">
+      <article class="card reveal">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+        <h3>Vender más</h3>
+        <p>Automatiza tu proceso de ventas para responder al instante, hacer seguimiento sin fallar y no dejar escapar ninguna oportunidad.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+        <h3>Acelerar procesos</h3>
+        <p>Elimina el trabajo manual repetitivo y haz en minutos lo que hoy le toma horas a tu equipo, con menos errores.</p>
+      </article>
+
+      <article class="card em reveal">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"/><path d="M16 12h.01M3 9h18"/><path d="M8 16l3-3 2 2 3-4" /></svg></div>
+        <h3>Reducir gastos</h3>
+        <p>Baja tus costos operativos automatizando tareas y liberando a tu equipo para que se enfoque en lo que de verdad genera ingresos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LO QUE APRENDERÁS ===================== -->
+<section class="s">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="kicker">En estas 2 horas</span>
+      <h2>Lo que te llevas de la conferencia</h2>
+    </div>
+    <div class="learn">
+      <div class="row reveal"><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Qué automatizar primero:</b> cómo detectar los procesos de tu empresa que puedes automatizar desde hoy.</p></div>
+      <div class="row reveal"><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Herramientas listas:</b> soluciones de IA y automatización que puedes aplicar sin ser experto en tecnología.</p></div>
+      <div class="row reveal"><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Casos reales:</b> ejemplos de empresas que ya venden más trabajando menos.</p></div>
+      <div class="row reveal"><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Un plan de acción:</b> los primeros pasos concretos para implementar en tu negocio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DETALLES DEL EVENTO ===================== -->
+<section class="s s-soft" id="detalles">
+  <div class="wrap">
+    <div class="event reveal">
+      <div class="event-in">
+        <span class="tag">Reserva tu lugar</span>
+        <h2>Detalles del evento</h2>
+        <p class="sub">Todo lo que necesitas saber para asistir.</p>
+
+        <div class="event-rows">
+          <div class="erow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <span><span class="k">Fecha</span><span class="v">Miércoles 16 de septiembre, 2026</span></span>
+          </div>
+          <div class="erow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span><span class="k">Hora</span><span class="v">8:00 AM – 10:00 AM</span></span>
+          </div>
+          <div class="erow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span><span class="k">Lugar</span><span class="v">Instalaciones de Fenalco</span></span>
+          </div>
+          <div class="erow free">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7ZM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7Z"/></svg></span>
+            <span><span class="k">Inversión</span><span class="v">Entrada gratuita · Cupos limitados</span></span>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="https://forms.gle/PE7QfxN2FqSzSSTJ6" target="_blank" rel="noopener noreferrer">
+          Reservar Mi Cupo Gratis Ahora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="fineprint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Confirmación inmediata al registrarte.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="s final" id="reservar">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="urgency"><span class="pulse" aria-hidden="true"></span>Cupos limitados · Se agotan por orden de reserva</span>
+      <h2>Tu competencia ya está automatizando. ¿Y tú?</h2>
+      <p>La entrada es completamente <b>gratis</b>, pero el aforo es limitado y los cupos se otorgan por orden de reserva. Asegura tu lugar hoy y da el primer paso hacia una empresa más rentable.</p>
+      <div class="cta-wrap">
+        <a class="btn btn-primary" href="https://forms.gle/PE7QfxN2FqSzSSTJ6" target="_blank" rel="noopener noreferrer" style="min-width:min(340px,100%)">
+          Reservar Mi Cupo Gratis Ahora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="cta-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Reserva obligatoria · Sin ningún costo
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Empresas Inteligentes">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3V5a3 3 0 0 0-3-3Z"/><path d="M9 12h6M12 9v6"/></svg>
+      </span>
+      <span>Empresas Inteligentes<small>Automatiza. Vende más. Gasta menos.</small></span>
+    </a>
+    <p class="fline">Conferencia presencial · Instalaciones de Fenalco · Miércoles 16 de septiembre, 8:00 – 10:00 AM</p>
+    <p class="legal">Entrada gratuita con cupo limitado, sujeto a disponibilidad y confirmación de reserva.<br/>&copy; 2026 Empresas Inteligentes. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ===================== CTA FIJA MÓVIL ===================== -->
+<div class="stickybar">
+  <a class="btn btn-primary" href="https://forms.gle/PE7QfxN2FqSzSSTJ6" target="_blank" rel="noopener noreferrer">
+    Reservar Mi Cupo Gratis Ahora
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<script>
+  // Reveal progresivo (mejora, no requisito)
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
+</body>
+</html>
