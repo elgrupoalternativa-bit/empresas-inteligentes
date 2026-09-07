@@ -176,8 +176,22 @@
   }
   .hero-art .card-float .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
   .hero-art .card-float .ico svg{width:17px;height:17px;color:#fff}
-  .hero-art .cf1{top:6%;left:-2%;animation:floaty 5.5s ease-in-out infinite}
-  .hero-art .cf2{bottom:10%;right:-3%;animation:floaty 6.5s ease-in-out infinite .6s}
+  .hero-art .cf1{top:8%;right:-2%;animation:floaty 5.5s ease-in-out infinite}
+  .hero-art .cf2{bottom:16%;left:-4%;animation:floaty 6.5s ease-in-out infinite .6s}
+  /* Ricardo señalando el boton de reservar */
+  .hero-art .ricardo-point{
+    position:relative;z-index:1;display:block;width:100%;height:auto;margin:0 auto;
+    filter:drop-shadow(0 24px 44px rgba(16,24,52,.22));
+    -webkit-mask-image:linear-gradient(to bottom,#000 84%,rgba(0,0,0,.4) 94%,transparent 100%);
+            mask-image:linear-gradient(to bottom,#000 84%,rgba(0,0,0,.4) 94%,transparent 100%);
+  }
+  .hero-art::before{ /* halo suave detras */
+    content:"";position:absolute;z-index:0;left:50%;top:34%;transform:translate(-50%,-50%);
+    width:78%;aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(31,91,255,.20),transparent 68%);
+    filter:blur(26px);pointer-events:none;
+  }
+  .hero-art .card-float{z-index:2}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
   @media(min-width:900px){
@@ -433,39 +447,16 @@
       </div>
     </div>
 
-    <!-- Ilustración decorativa (SVG en línea, sin imágenes externas) -->
-    <div class="hero-art reveal" aria-hidden="true">
-      <svg viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#2a67ff"/><stop offset="1" stop-color="#1746d6"/>
-          </linearGradient>
-          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#12b981"/><stop offset="1" stop-color="#0a8f5f"/>
-          </linearGradient>
-        </defs>
-        <rect x="70" y="60" width="320" height="230" rx="20" fill="#ffffff" stroke="#e6eaf3"/>
-        <rect x="70" y="60" width="320" height="52" rx="20" fill="#f3f6fc"/>
-        <circle cx="96" cy="86" r="6" fill="#cfd9ee"/><circle cx="116" cy="86" r="6" fill="#cfd9ee"/><circle cx="136" cy="86" r="6" fill="#cfd9ee"/>
-        <!-- nodos de automatización -->
-        <line x1="150" y1="165" x2="230" y2="140" stroke="#c7d3ee" stroke-width="2"/>
-        <line x1="150" y1="165" x2="230" y2="205" stroke="#c7d3ee" stroke-width="2"/>
-        <line x1="230" y1="140" x2="315" y2="175" stroke="#c7d3ee" stroke-width="2"/>
-        <line x1="230" y1="205" x2="315" y2="175" stroke="#c7d3ee" stroke-width="2"/>
-        <circle cx="150" cy="165" r="20" fill="url(#g1)"/>
-        <circle cx="230" cy="140" r="16" fill="#eaf0ff" stroke="#bcd0ff" stroke-width="2"/>
-        <circle cx="230" cy="205" r="16" fill="#eaf0ff" stroke="#bcd0ff" stroke-width="2"/>
-        <circle cx="315" cy="175" r="22" fill="url(#g2)"/>
-        <path d="M143 165l5 5 9-10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M307 175h16M315 167v16" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
-        <rect x="96" y="235" width="130" height="9" rx="4.5" fill="#e6eaf3"/>
-        <rect x="96" y="252" width="86" height="9" rx="4.5" fill="#eef1f8"/>
-      </svg>
-      <div class="card-float cf1">
+    <!-- Ricardo invitando a reservar + tarjetas flotantes -->
+    <div class="hero-art reveal">
+      <img class="ricardo-point" src="assets/ricardo-apunta.webp" width="880" height="1056"
+           alt="Ricardo Zárate señalando el botón para reservar el cupo" fetchpriority="high" />
+      
+      <div class="card-float cf1" aria-hidden="true">
         <span class="ico" style="background:linear-gradient(135deg,#2a67ff,#1746d6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span>
         +38% ventas
       </div>
-      <div class="card-float cf2">
+      <div class="card-float cf2" aria-hidden="true">
         <span class="ico" style="background:linear-gradient(135deg,#12b981,#0a8f5f)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
         Procesos en minutos
       </div>
