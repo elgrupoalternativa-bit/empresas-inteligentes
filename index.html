@@ -330,6 +330,12 @@
   }
   .stickybar .btn{padding:14px 20px;font-size:15px}
   @media(min-width:820px){ .stickybar{display:none} body{padding-bottom:0} }
+  /* Se aparta mientras otro botón de «Reservar» está a la vista (el de la
+     portada y el del cierre): dos botones iguales en la misma pantalla se leen
+     como un error. Medido el 5-oct-2026: en 393×662 salían los dos juntos. Si
+     el JS no corre, la barra se queda (es lo seguro). */
+  .stickybar{transition:transform .3s ease,opacity .3s ease}
+  .stickybar.apartada{transform:translateY(110%);opacity:0;pointer-events:none}
 
   /* ===== Conferencista ===== */
   .speaker{max-width:960px;margin:0 auto;border-radius:24px;overflow:hidden;position:relative;
@@ -659,6 +665,22 @@
 </div>
 
 <script>
+  // Barra fija: fuera mientras se vea otro botón de reservar de la página.
+  (function(){
+    var barra = document.querySelector('.stickybar');
+    if(!barra || !('IntersectionObserver' in window)) return;
+    var otros = [].slice.call(document.querySelectorAll('main a.btn-primary, section a.btn-primary'))
+      .filter(function(a){ return !barra.contains(a); });
+    var vistos = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ en.isIntersecting ? vistos.add(en.target) : vistos.delete(en.target); });
+      var apartar = vistos.size > 0;
+      barra.classList.toggle('apartada', apartar);
+      barra.inert = apartar;
+    });
+    otros.forEach(function(a){ io.observe(a); });
+  })();
+
   // Reveal progresivo (mejora, no requisito)
   (function(){
     var els = document.querySelectorAll('.reveal');
